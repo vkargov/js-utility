@@ -1,9 +1,7 @@
 // Heap implementation heavily inspired by the one described in
 // Introduction to Algorithms
 
-function MaxHeapify(A, i, len) {
-	if (len === undefined)
-		len = A.length
+function MaxHeapify(A, i, len=A.length) {
 	var i_max = i
 	var left = i*2+1
 	var right = i*2+2
@@ -25,7 +23,6 @@ function BuildMaxHeap(A) {
 function Heapsort(A) {
 	BuildMaxHeap(A)
 	for (var i = A.length - 1; i > 0; i--) {
-		debugger
 		[A[0], A[i]] = [A[i], A[0]]
 		MaxHeapify(A, 0, i)
     }
